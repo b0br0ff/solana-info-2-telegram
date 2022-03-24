@@ -22,7 +22,6 @@ Telegram REST API: https://core.telegram.org/bots/api
 
 
 
-
-
+Have a fun!
 
 
