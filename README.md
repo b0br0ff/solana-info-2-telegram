@@ -19,7 +19,7 @@ Telegram REST API: https://core.telegram.org/bots/api
 ## Installation
 1. Create a Telegram bot using @BotFather or use chat id and token from existing one;
 2. Install dependencies if needed: sudo apt install bc jq -y
-3. Clone project: git clone https://github.com/kerak69/solana_bot.git
+3. Clone project: git clone https://github.com/b0br0ff/solana-info-2-telegram.git
 4. Make scripts executable: chmod+x *.sh
 
 ## Update
