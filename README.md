@@ -5,6 +5,7 @@ Shell script that uses Solana and Telegram REST API to send useful stats on a So
 Solana node validators need to have information about balance on the main identity account, vote account and stake accounts, health of the validator, spent and earned coins during the epoch. 
 
 Example of the provided information:
+
 ![alt text](https://github.com/b0br0ff/solana-info-2-telegram/blob/main/node-info.jpg)
 
 
