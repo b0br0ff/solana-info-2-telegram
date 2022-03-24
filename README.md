@@ -20,10 +20,10 @@ Telegram REST API: https://core.telegram.org/bots/api
 
 
 ## Usage
+Most simple way is to schedule the execution in the cron, below you can see example from my system, it is executed 5 times a day on specific hours:
 
+0 8,12,16,20,22 * * * cd /home/ubuntu/solana_bot; ./check-node.sh
 
-
-
-Have a fun!
+Have a fun with Solana!
 
 
