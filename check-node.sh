@@ -20,7 +20,7 @@ CREDIT_PRICE=0.000005
 BLOCK_PRICE=0.00375
 # Icons for telegram bot
 OK_ICON=`echo -e '\U0002705'`
-NOK_ICON=`echo -e '\U000274C'
+NOK_ICON=`echo -e '\U000274C'`
 
 function get_spent_sol(){
     local JSON="$1"
