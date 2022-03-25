@@ -30,6 +30,8 @@ MAIN_ACC="PUT_HERE_YOUR_NODE_MAIN_ID"
 VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ACCOUNT"
 STAKE1_ACC="PUT_HERE_STAKE1_AACOUN"
 STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT"
+By default script uses following endpoint to query information for mainnetbeta node, you can change it to use in testnet:
+API_URL="https://api.mainnet-beta.solana.com"
 
 ## Update
 Preform same actions as described in "Instalation" chapter.
