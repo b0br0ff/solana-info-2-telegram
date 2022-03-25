@@ -34,5 +34,5 @@ crontab -l
 Have a fun with Solana validation!
 
 ## PS
-Script called 
+Script called Send_msg_toTelBot.sh is not written by me, I just modified it a little bit existing one, sorry completely forgot who is the author.
 
