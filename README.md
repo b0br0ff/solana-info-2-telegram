@@ -15,7 +15,6 @@ This script is written in pure Linux shell, I have tested it only in Ubuntu 20.0
 Reference to the used documentation:
 
 Solana REST API: https://docs.solana.com/ru/developing/clients/jsonrpc-api#json-rpc-api-reference
-Telegram REST API: https://core.telegram.org/bots/api
 
 ## Installation
 1. Create a Telegram bot using @BotFather or use chat id and token from existing one;
@@ -27,9 +26,17 @@ sudo apt install bc jq -y
 ```
 git clone https://github.com/b0br0ff/solana-info-2-telegram.git
 ```
-5. Make scripts executable: 
+5. Copy both scripts to the same folder according to your naming preferences. In my case it is called "solana_bot":
 ```
-chmod+x *.sh
+mkdir solana_bot
+mv check-node.sh sh solana_bot/
+mv Send_msg_toTelBot.sh sh solana_bot/
+```
+7. Make scripts executable: 
+```
+cd solana_bot
+chmod +x check-node.sh
+chmod +x Send_msg_toTelBot.sh
 ```
 6. Edit script Send_msg_toTelBot.sh and set constants below according to your Telegram bot: 
 ```
