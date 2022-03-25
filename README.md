@@ -56,7 +56,7 @@ Most simple way is to schedule the execution in the cron, below you can see exam
 
 ```
 crontab -l
-0 8,12,16,20,22 * * * cd /home/<YOUR_USER>/solana_bot; ./check-node.sh
+0 8,12,16,20,22 * * * cd /home/<YOUR_USER>/solana-info-2-telegram; ./check-node.sh
 ```
 
 Have a fun with Solana validation!
