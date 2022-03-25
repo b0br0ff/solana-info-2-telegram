@@ -51,7 +51,7 @@ MAIN_ACC="PUT_HERE_YOUR_NODE_MAIN_ID"
 VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ACCOUNT"
 STAKE1_ACC="PUT_HERE_STAKE1_AACOUN"
 STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT"
-#By default script uses following endpoint to query information for mainnetbeta node, you can change it to use in testnet:
+#By default script uses following endpoint to query information for mainnetbeta node, you can change it to use in testnet, or even to work witj local RPC (http://localhost:8899):
 API_URL="https://api.mainnet-beta.solana.com"
 ```
 
