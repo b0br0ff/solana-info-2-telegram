@@ -46,7 +46,10 @@ API_URL="https://api.mainnet-beta.solana.com"
 ```
 
 ## Update
-Preform same actions as described in "Instalation" chapter.
+```
+cd $HOME/solana-info-2-telegram/
+git pull
+```
 
 ## Usage
 Most simple way is to schedule the execution in the cron, below you can see example from my system, it is executed 5 times a day on specific hours:
