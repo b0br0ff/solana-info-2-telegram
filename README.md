@@ -22,11 +22,17 @@ Telegram REST API: https://core.telegram.org/bots/api
 3. Clone project: git clone https://github.com/b0br0ff/solana-info-2-telegram.git
 4. Make scripts executable: chmod+x *.sh
 
+Send_msg_toTelBot.sh
+telegram_bot_token="PUT_HERE_BOT_TOKEN_BY_BOTFATHER"
+telegram_chat_id="PUT_HERE_CHAT_ID"
 
+check-node.sh
+### Initialize variables below with your data
+NODE_NAME=PUT_HERE_NODE_NAME"
 MAIN_ACC="PUT_HERE_YOUR_NODE_MAIN_ID"
-VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ID"
-STAKE1_ACC="PUT_HERE_STAKE1_AACOUNT_ID"
-STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT_ID"
+VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ACCOUNT"
+STAKE1_ACC="PUT_HERE_STAKE1_AACOUN"
+STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT"
 
 ## Update
 Preform same actions as described in "Instalation" chapter.
