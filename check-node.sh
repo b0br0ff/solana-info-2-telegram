@@ -2,27 +2,24 @@
 # Author: b0br0ff
 # Prereqs: bc, jq
 
-NET_TYPE="$1"
 DEBUG=1
 
-OK_ICON=`echo -e '\U0002705'`
-NOK_ICON=`echo -e '\U000274C'`
-
+### Initialize variables below with your data
+NODE_NAME=PUT_HERE_NODE_NAME"
 MAIN_ACC="PUT_HERE_YOUR_NODE_MAIN_ID"
-VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ID"
-STAKE1_ACC="PUT_HERE_STAKE1_AACOUNT_ID"
-STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT_ID"
+VOTE_ACC="PUT_HERE_YOUR_NODE_VOTE_ACCOUNT"
+STAKE1_ACC="PUT_HERE_STAKE1_AACOUN"
+STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT"
 
 API_URL="https://api.mainnet-beta.solana.com"
-if [ "${NET_TYPE}" != "" ]; 
-then 
-	API_URL="https://api.testnet.solana.com" 
-fi
+#API_URL="https://api.testnet.solana.com" 
 
-NODE_NAME=PUT_HERE_NODE_NAME"
-
+# Constants for spent/earned calculations
 CREDIT_PRICE=0.000005
 BLOCK_PRICE=0.00375
+# Icons for telegram bot
+OK_ICON=`echo -e '\U0002705'`
+NOK_ICON=`echo -e '\U000274C'
 
 function get_spent_sol(){
     local JSON="$1"
