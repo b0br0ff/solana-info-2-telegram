@@ -2,7 +2,7 @@
 Shell script that uses Solana and Telegram REST API to send useful stats on a Solana node
 
 ## Why?
-Solana node validators need to have information about balance on the main identity account, vote account and stake accounts, health of the validator, spent and earned coins during the epoch. 
+Solana node validators need to have information about balance on the main identity account, vote account and stake accounts, health of the validator, spent and earned coins during the epoch. More KPIs can be easily added, but that is enough in my case.
 
 Example of the provided information:
 
@@ -23,15 +23,16 @@ Telegram REST API: https://core.telegram.org/bots/api
 4. Make scripts executable: chmod+x *.sh
 
 ## Update
-cd $HOME/solana_bot && git pull
+Preform same actions as described in "Instalation" chapter.
 
 ## Usage
 Most simple way is to schedule the execution in the cron, below you can see example from my system, it is executed 5 times a day on specific hours:
 
 crontab -l
-
 0 8,12,16,20,22 * * * cd /home/ubuntu/solana_bot; ./check-node.sh
 
-Have a fun with Solana!
+Have a fun with Solana validation!
 
+## PS
+Script called 
 
