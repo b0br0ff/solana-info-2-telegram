@@ -2,7 +2,7 @@
 Shell script that uses Solana and Telegram REST API to send useful stats on a Solana node
 
 ## Why?
-Solana node validators need to have information about balance on the main identity account, vote account and stake accounts, health of the validator, spent and earned coins during the epoch. More KPIs can be easily added, but that is enough in my use case. Sometime if you are not attantive you can lose stake from foundation, as happened to me once.
+Solana node validators need to have information about balance on the main identity account, vote account and stake accounts, health of the validator, spent and earned coins during the epoch. More KPIs can be easily added, but that is enough in my use case. Sometime if you are not attantive you can lose stake from foundation, as happened once to me. 
 
 Example of the provided information:
 
