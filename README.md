@@ -13,6 +13,7 @@ Example of the provided information:
 This script is written in pure Linux shell, I have tested it only in Ubuntu 20.04 LTS. It also uses two modules bc and jq that might be not installed on your system by default. Install them if needed. Of course you need to have a own telegram bot created with bothFather (chat id and token are required). In theory should work under any other Linux distribution. Does not require Solana CLI to be installed on the machine.
 
 Reference to the used documentation:
+
 Solana REST API: https://docs.solana.com/ru/developing/clients/jsonrpc-api#json-rpc-api-reference
 Telegram REST API: https://core.telegram.org/bots/api
 
