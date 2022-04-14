@@ -13,7 +13,7 @@ STAKE2_ACC="PUT_HERE_STAKE2_AACOUNT"
 
 API_URL="https://api.mainnet-beta.solana.com"
 #API_URL="https://api.testnet.solana.com" 
-#API_URL="http://localhost:889"
+#API_URL="http://localhost:8899"
 
 # Constants for spent/earned calculations
 CREDIT_PRICE=0.000005
