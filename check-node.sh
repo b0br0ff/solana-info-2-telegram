@@ -84,6 +84,10 @@ BLOCKS_PRODUCTION_JSON=$(curl --silent -X POST ${API_URL} -H 'Content-Type: appl
 BLOCKS_PRODUCED=$(echo ${BLOCKS_PRODUCTION_JSON} | jq '.result.value.byIdentity."'${MAIN_ACC}'"[1]')
 SPENT_SOL=$(get_spent_sol ${STAKE_TOTAL_JSON} -1 ${BLOCKS_PRODUCED})
 
+#Get stake history
+STAKE_HISTORY_JSON=$(curl --silent -X GET  -H 'Content-Type: application/json' 'https://kyc-api.vercel.app/api/validators/details?pk='${MAIN_ACC}'&epoch='${PREV_EPOCH}'')
+STAKE_HISTORY=$(echo ${STAKE_HISTORY_JSON} | jq '.stats.state_action')
+
 # Debug info
 if [ "$DEBUG" -eq 1 ]; then
 	echo "Epoch = ${EPOCH_NUM}"
@@ -98,12 +102,13 @@ if [ "$DEBUG" -eq 1 ]; then
 	echo "Delinquent status = ${DELINQUENT_NODE}"
 	echo "Earned = ${EARNED_LAMPORTS} SOL in epoch ${PREV_EPOCH}"
 	echo "Spent ${SPENT_SOL} SOL in epoch ${EPOCH_NUM}"
+	echo "Stake: ${STAKE_HISTORY}"
 fi
 
 # in case of 1 self stake
-#MSG=$(echo "Epoch = ${EPOCH_NUM}%0ATotal blocks = ${SLOTS_CNT}%0AProduced blocks = ${BLOCKS_PRODUCED}%0AComission = ${COMM_PECENT}%%0AMain ID balance = ${MAIN_BALANCE} SOL%0AVote balance = ${VOTE_BALANCE} SOL%0ASelf-stake 1 = ${STAKE1_STATUS}%0AActive stake = ${STAKE_ACT} SOL%0AEarned in prev epoch = ${EARNED_LAMPORTS} SOL%0ASpent = ${SPENT_SOL} SOL in epoch")
+#MSG=$(echo "Epoch = ${EPOCH_NUM}%0ATotal blocks = ${SLOTS_CNT}%0AProduced blocks = ${BLOCKS_PRODUCED}%0AComission = ${COMM_PECENT}%%0AMain ID balance = ${MAIN_BALANCE} SOL%0AVote balance = ${VOTE_BALANCE} SOL%0ASelf-stake 1 = ${STAKE1_STATUS}%0AActive stake = ${STAKE_ACT} SOL%0AEarned in prev epoch = ${EARNED_LAMPORTS} SOL%0ASpent = ${SPENT_SOL} SOL in epoch%0AStake: ${STAKE_HISTORY}")
 # in case of 2 self stakes
-MSG=$(echo "Epoch = ${EPOCH_NUM}%0ATotal blocks = ${SLOTS_CNT}%0AProduced blocks = ${BLOCKS_PRODUCED}%0AComission = ${COMM_PECENT}%%0AMain ID balance = ${MAIN_BALANCE} SOL%0AVote balance = ${VOTE_BALANCE} SOL%0ASelf-stake 1 = ${STAKE1_STATUS}%0ASelf-stake 2 = ${STAKE2_STATUS}%0AActive stake = ${STAKE_ACT} SOL%0AEarned in prev epoch = ${EARNED_LAMPORTS} SOL%0ASpent = ${SPENT_SOL} SOL in epoch")
+MSG=$(echo "Epoch = ${EPOCH_NUM}%0ATotal blocks = ${SLOTS_CNT}%0AProduced blocks = ${BLOCKS_PRODUCED}%0AComission = ${COMM_PECENT}%%0AMain ID balance = ${MAIN_BALANCE} SOL%0AVote balance = ${VOTE_BALANCE} SOL%0ASelf-stake 1 = ${STAKE1_STATUS}%0ASelf-stake 2 = ${STAKE2_STATUS}%0AActive stake = ${STAKE_ACT} SOL%0AEarned in prev epoch = ${EARNED_LAMPORTS} SOL%0ASpent = ${SPENT_SOL} SOL in epoch%0AStake: ${STAKE_HISTORY}")
 
 if [ "${DELINQUENT_NODE}" = "" ]; then
    ./Send_msg_toTelBot.sh "${OK_ICON} ${NODE_NAME} Info ${OK_ICON}" "${MSG}"
