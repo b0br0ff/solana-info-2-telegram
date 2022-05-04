@@ -55,6 +55,9 @@ VOTE_BALANCE=$(echo "scale=2; ${VOTE_BALANCE}/1000000000" | bc)
 # Get scheduled slots
 SLOTS_CNT=$(curl --silent -X POST ${API_URL} -H 'Content-Type: application/json' -d '{ "jsonrpc":"2.0","id":1, "method":"getLeaderSchedule", "params": [ null, { "identity": "'${MAIN_ACC}'" }] }' | jq '.result."'${MAIN_ACC}'"' | wc -l)
 SLOTS_CNT=$(echo "${SLOTS_CNT} -2" | bc)
+if [ "$SLOTS_CNT" == "-1" ]; then
+   SLOTS_CNT=0
+fi
 
 # Get self stake status
 STAKE1_STATUS=$(get_stake_status "${STAKE1_ACC}")
